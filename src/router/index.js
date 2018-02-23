@@ -12,6 +12,7 @@ import Form from '@/views/pages/form'
 import Page8 from '@/views/pages/page8'
 import Page9 from '@/views/pages/page9'
 import httpPage from '@/views/pages/http'
+import Chart from '@/views/pages/chart'
 
 
 Vue.use(Router)
@@ -72,6 +73,11 @@ export default new Router({
       path: '/http',
       name: 'http',
       component: httpPage
+    },
+    {
+      path:'/chart',
+      name:'chart',
+      component:Chart
     }
   ]
 })

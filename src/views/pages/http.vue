@@ -2,12 +2,23 @@
   <div>
       <button @click="my_post">点我发送Post请求</button>
       <button @click="my_get">点我发送get请求</button>
+      <Nav></Nav>
   </div>
 </template>
 <script>
  import { requestLogin } from '@/api/api';
   import { getConfigList } from '@/api/api';
+  import Nav from '@/components/nav'
 export default {
+  comments: {
+    Nav,
+  },
+  mounted:function() {
+            this.$nextTick(function () {
+               this.my_post();
+               this.my_get();
+                })
+            },
   data(){
       return{
         ruleForm2: {
@@ -19,6 +30,9 @@ export default {
         pageSize:20,
         status:'all',
         search:'',
+      }
+      rule:{
+
       }
   },  
   methods:{
